@@ -8,7 +8,7 @@ def LoadingScreen(x):
     lcd = pygame.display.set_mode((320, 240))
     pygame.mouse.set_visible(False)
 
-    my_image = pygame.image.load('ThePiWatch.png')
+    my_image = pygame.image.load('PiWatchLogo.png')
 
     lcd.blit(my_image, (0, 0))
     pygame.display.update()
