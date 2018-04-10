@@ -111,4 +111,5 @@ def DisplayTime():
         lcd.blit(fontimg, (40,80))
         pygame.display.update()
         pygame.time.delay(500)
-    
+
+DisplayTime()
