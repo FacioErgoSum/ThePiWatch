@@ -2,6 +2,7 @@ import pygame
 import os
 from time import sleep
 import RPi.GPIO as GPIO
+import PiClock
 os.putenv('SDL_FBDEV', '/dev/fb1')
 pygame.init()
 lcd = pygame.display.set_mode((320, 240))
@@ -36,13 +37,7 @@ def MenuButtons():
         for (k,v) in button_map.items():
             if GPIO.input(k) == False:
                 if k == 27:
-                    lcd.fill((0,0,0))
-                    text_surface = font_medium.render('Clock', True, WHITE)
-                    rect = text_surface.get_rect(center=(160,120))
-                    lcd.blit(text_surface, rect)
-                    pygame.display.update()
-                    sleep(1)
-                    MenuIsDrawn = 0
+                    PiClock.DisplayTime()
                 elif k == 23:
                     lcd.fill((0,0,0)) 
                     text_surface = font_medium.render('Weather', True, WHITE)
