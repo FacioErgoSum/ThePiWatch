@@ -6,17 +6,24 @@ pygame.init()
 lcd = pygame.display.set_mode((320, 240))
 
 def DisplayTime():
+    #Color Palette
     WHITE = (255,255,255)
     GREY = (54,54,54)
     BLACK = (0,0,0)
 
+    #Clear Screen
     lcd.fill(GREY)
     pygame.display.update()
 
+    #Set Clock Font
     font = pygame.font.Font('Quicksand-Bold.otf', 63)
 
     showingClock = 1
+
+    #Displays the Clock
     while showingClock == 1:
+
+        #Variables for the Time
         dt=str(datetime.datetime.today())
         time = dt[11:19]
 

@@ -1,6 +1,9 @@
 import pygame
 import os
 import datetime
+import sys
+from pygame.locals import *
+
 os.putenv('SDL_FBDEV', '/dev/fb1')
 pygame.init()
 lcd = pygame.display.set_mode((320, 240))
@@ -20,7 +23,7 @@ class item:
         self.center = self.rect.center
 
     def draw(self):
-        screen.blit(self.img,(self.left, self.top))
+        lcd.blit(self.img,(self.left, self.top))
 
     def setaxis(self,axis):
         self.axis = axis
@@ -89,27 +92,25 @@ def DisplayTime():
 
         #Font Border
         fontimg = font.render(time,1,BLACK)
-        lcd.blit(fontimg, (36,80))
+        lcd.blit(fontimg, (36,165))
         fontimg = font.render(time,1,BLACK)
-        lcd.blit(fontimg, (44,80))
+        lcd.blit(fontimg, (44,165))
         fontimg = font.render(time,1,BLACK)
-        lcd.blit(fontimg, (40,76))
+        lcd.blit(fontimg, (40,161))
         fontimg = font.render(time,1,BLACK)
-        lcd.blit(fontimg, (40,84))
+        lcd.blit(fontimg, (40,169))
 
         fontimg = font.render(time,1,BLACK)
-        lcd.blit(fontimg, (38,78))
+        lcd.blit(fontimg, (38,163))
         fontimg = font.render(time,1,BLACK)
-        lcd.blit(fontimg, (42,82))
+        lcd.blit(fontimg, (42,167))
         fontimg = font.render(time,1,BLACK)
-        lcd.blit(fontimg, (42,78))
+        lcd.blit(fontimg, (42,163))
         fontimg = font.render(time,1,BLACK)
-        lcd.blit(fontimg, (38,82))
+        lcd.blit(fontimg, (38,167))
 
         #Actual Font
         fontimg = font.render(time,1,WHITE)
-        lcd.blit(fontimg, (40,80))
+        lcd.blit(fontimg, (40,165))
         pygame.display.update()
         pygame.time.delay(500)
-
-DisplayTime()
