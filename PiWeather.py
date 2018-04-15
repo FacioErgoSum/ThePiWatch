@@ -17,22 +17,22 @@ lcd.fill(GREY)
 pygame.display.update()
 
 #Create Fonts
-bigFont = pygame.font.Font('Fonts/Quicksand-Bold.otf', 70)
-mediumFont = pygame.font.Font('Fonts/Quicksand-Bold.otf', 32)
+bigFont = pygame.font.Font('Quicksand-Bold.otf', 70)
+mediumFont = pygame.font.Font('Quicksand-Bold.otf', 32)
 chanceFont = pygame.font.Font(None, 32)
-smallFont = pygame.font.Font('Fonts/Quicksand-Bold.otf', 24)
+smallFont = pygame.font.Font('Quicksand-Bold.otf', 24)
 
 #Set Icon
 if carbondale['current_conditions']['icon'] == 24 :
-    iconimg = pygame.image.load('Images/wind.png')
+    iconimg = pygame.image.load('wind.png')
 elif carbondale['current_conditions']['icon'] == 14 :
-    iconimg = pygame.image.load('Images/snow.png')
+    iconimg = pygame.image.load('snow.png')
 elif int(carbondale['current_conditions']['icon']) > 24 and int(carbondale['current_conditions']['icon']) < 32 :
-    iconimg = pygame.image.load('Images/cloudy.png')
+    iconimg = pygame.image.load('cloudy.png')
 elif int(carbondale['current_conditions']['icon']) > 31 and int(carbondale['current_conditions']['icon']) < 35 :
-    iconimg = pygame.image.load('Images/clear-day.png')
+    iconimg = pygame.image.load('clear-day.png')
 elif int(carbondale['current_conditions']['icon']) > 35 and int(carbondale['current_conditions']['icon']) < 41 :
-    iconimg = pygame.image.load('Images/rain.png')
+    iconimg = pygame.image.load('rain.png')
 else :
     iconimg = pygame.image.load('Images/unknown.png')
 
