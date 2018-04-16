@@ -1,10 +1,20 @@
 import pywapi
 import pygame
 import os
+import RPi.GPIO as GPIO
+import MainMenu
 
 os.putenv('SDL_FBDEV', '/dev/fb1')
 pygame.init()
 lcd = pygame.display.set_mode((320, 240))
+
+#Creates Button Map
+button_map = {17:(0,0,0)}
+
+#Sets Buttons to Normally Open
+GPIO.setmode(GPIO.BCM)
+for k in button_map.keys():
+    GPIO.setup(k, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 
 #Set Location
 carbondale = pywapi.get_weather_from_weather_com('66414')
@@ -79,6 +89,10 @@ def DisplayWeather():
         lcd.blit(fontimg, (225,117))
 
         pygame.display.update()
+
+        if GPIO.input(k) == False:
+            if k == 17:
+                MainMenu.MenuButtons()
 
 
 

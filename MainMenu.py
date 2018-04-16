@@ -51,4 +51,4 @@ def MenuButtons():
                     MenuIsDrawn = 0
                 else:
                     pygame.display.update()
-        sleep(1)
+        sleep(0.2)
