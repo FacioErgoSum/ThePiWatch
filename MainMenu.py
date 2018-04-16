@@ -49,9 +49,6 @@ def MenuButtons():
                     pygame.display.update()
                     sleep(1)
                     MenuIsDrawn = 0
-                elif k == 17:
-                    if k == 22:
-                        exit()
                 else:
                     pygame.display.update()
         sleep(0.2)
