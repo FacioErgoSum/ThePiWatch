@@ -1,12 +1,22 @@
 import pygame
 import os
 import datetime
+import RPi.GPIO as GPIO
 import sys
+import MainMenu
 from pygame.locals import *
 
 os.putenv('SDL_FBDEV', '/dev/fb1')
 pygame.init()
 lcd = pygame.display.set_mode((320, 240))
+
+#Creates Button Map
+button_map = {17:(0,0,0)}
+
+#Sets Buttons to Normally Open
+GPIO.setmode(GPIO.BCM)
+for k in button_map.keys():
+    GPIO.setup(k, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 
 class item:
 
@@ -113,4 +123,9 @@ def DisplayTime():
         fontimg = font.render(time,1,WHITE)
         lcd.blit(fontimg, (40,165))
         pygame.display.update()
+
+        if GPIO.input(k) == False:
+            if k == 17:
+                MainMenu.MenuButtons()
+        
         pygame.time.delay(500)
