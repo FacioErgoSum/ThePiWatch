@@ -50,11 +50,5 @@ def MenuButtons():
                     sleep(1)
                     MenuIsDrawn = 0
                 else:
-                    lcd.fill((0,0,0))
-                    text_surface = font_medium.render('Return', True, WHITE)
-                    rect = text_surface.get_rect(center=(160,120))
-                    lcd.blit(text_surface, rect)
                     pygame.display.update()
-                    sleep(1)
-                    MenuIsDrawn = 0
         sleep(1)
